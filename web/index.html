@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyExe Studio | Python 打包 EXE</title>
+    <meta
+      name="description"
+      content="PyExe Studio：开源的 Python 打包 EXE 工具。支持 onefile/onedir、UPX 压缩、实时日志与错误提示。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer bg-layer-1"></div>
+    <div class="bg-layer bg-layer-2"></div>
+
+    <header class="nav">
+      <a class="brand" href="#top">
+        <span class="brand-dot"></span>
+        <span class="brand-text">PyExe Studio</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#features" data-i18n="navFeatures">功能</a>
+        <a href="#workflow" data-i18n="navWorkflow">流程</a>
+        <a href="#faq" data-i18n="navFaq">常见问题</a>
+        <a href="#download" data-i18n="navDownload">下载</a>
+      </nav>
+      <button id="langToggle" class="lang-btn" aria-label="切换语言">EN</button>
+    </header>
+
+    <main id="top">
+      <section class="hero reveal">
+        <p class="eyebrow" data-i18n="heroEyebrow">PYTHON TO EXE, VISUAL & FAST</p>
+        <h1 data-i18n="heroTitle">让 Python 打包成 EXE，像点一个按钮一样简单</h1>
+        <p class="hero-text" data-i18n="heroText">
+          PyExe Studio 是一个面向 Windows 的可视化打包工具。你只需要选择 `.py` 文件和输出目录，就能调用
+          PyInstaller 完成构建，并实时查看日志与错误建议。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#download" data-i18n="heroBtnMain">立即下载</a>
+          <a class="btn btn-ghost" href="#workflow" data-i18n="heroBtnAlt">查看使用流程</a>
+        </div>
+      </section>
+
+      <section id="features" class="section reveal">
+        <h2 data-i18n="featuresTitle">核心功能</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3 data-i18n="f1Title">一键打包</h3>
+            <p data-i18n="f1Text">支持 `--onefile` 和 `--onedir`，覆盖常见发布方式。</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="f2Title">运行模式切换</h3>
+            <p data-i18n="f2Text">可切换 `--windowed` / `--console`，适配 GUI 与命令行项目。</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="f3Title">UPX 压缩</h3>
+            <p data-i18n="f3Text">支持手动设置 UPX 路径，也可自动使用内置 `UPX.EXE`。</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="f4Title">实时日志</h3>
+            <p data-i18n="f4Text">构建过程逐行输出，常见错误会给出可读的修复提示。</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="f5Title">双语界面</h3>
+            <p data-i18n="f5Text">中文 / English 切换，团队沟通和交付更直观。</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="f6Title">浅色/深色主题</h3>
+            <p data-i18n="f6Text">支持跟随系统主题，也可手动指定视觉风格。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="workflow" class="section reveal">
+        <h2 data-i18n="workflowTitle">3 步完成打包</h2>
+        <ol class="steps">
+          <li data-i18n="step1">选择 Python 源文件（`.py`）和输出目录</li>
+          <li data-i18n="step2">设置参数（名称、图标、模式、UPX、管理员权限）</li>
+          <li data-i18n="step3">点击开始并在日志区域观察构建结果</li>
+        </ol>
+      </section>
+
+      <section class="section reveal">
+        <h2 data-i18n="argTitle">支持的常用参数</h2>
+        <div class="arg-list">
+          <span>--onefile</span>
+          <span>--onedir</span>
+          <span>--windowed</span>
+          <span>--console</span>
+          <span>--name</span>
+          <span>--icon</span>
+          <span>--uac-admin</span>
+          <span>--clean</span>
+          <span>-y</span>
+          <span>--upx-dir</span>
+        </div>
+      </section>
+
+      <section id="faq" class="section reveal">
+        <h2 data-i18n="faqTitle">常见问题</h2>
+        <div class="faq-list">
+          <details>
+            <summary data-i18n="q1">提示找不到 PyInstaller 怎么办？</summary>
+            <p data-i18n="a1">先执行 `pip install pyinstaller`，然后重启软件再试。</p>
+          </details>
+          <details>
+            <summary data-i18n="q2">出现 ModuleNotFoundError 怎么处理？</summary>
+            <p data-i18n="a2">根据报错安装缺失依赖，例如 `pip install <module>`。</p>
+          </details>
+          <details>
+            <summary data-i18n="q3">权限不足或 Access is denied？</summary>
+            <p data-i18n="a3">可尝试启用管理员权限选项，或以管理员方式运行软件。</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="download" class="section cta reveal">
+        <h2 data-i18n="downloadTitle">立即体验 PyExe Studio</h2>
+        <p data-i18n="downloadText">适用于 Windows 10 / 11，推荐 Python 3.8-3.12。</p>
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="https://github.com/YYT-2013/py-to-exe/releases/download/v/PyExe.Studio.exe"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="downloadBtn"
+            >下载 EXE</a
+          >
+          <a
+            class="btn btn-ghost"
+            href="https://github.com/YYT-2013/py-to-exe"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="docBtn"
+            >GitHub 仓库</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>(c) <span id="year"></span> PyExe Studio</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
